@@ -2,9 +2,9 @@
 // Usa la Service Role Key de Supabase (variable de entorno, nunca en el frontend)
 // para crear cuentas de usuario sin que el administrador tenga que entrar a Supabase.
 
-const { createClient } = require('@supabase/supabase-js')
+import { createClient } from '@supabase/supabase-js'
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Método no permitido' }
   }
